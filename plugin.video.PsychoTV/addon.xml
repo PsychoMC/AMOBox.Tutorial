@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.PsychoTV"
        name="[COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR]"
-       version="3.0.1"
+       version="3.0.2"
        provider-name="Coelhon & AMObox">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -27,7 +27,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">[COLOR aqua][B]P[/COLOR][COLOR white]sychoTV[/B][/COLOR] permite o acesso aos canais, filmes e séries aos membros da [COLOR red]P[/COLOR][COLOR white]sycho[/COLOR]</summary>
     <description lang="en">Este Addon foi criado e desenvolvido pela [COLOR aqua][B] P[/COLOR][COLOR white][B]sycho Media Center[/B][/COLOR] o mesmo nao se responsabiliza pelo que o uso do mesmo venha a causar.
-	Tudo o que aqui se encontra está ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR blue][B] https://bit.ly/PsychoFacebook [/COLOR][/B]
+	Tudo o que aqui se encontra está ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR blue][B]bit.ly/PsychoFacebook [/B][/COLOR]
 	
 	
 	[COLOR yellow][B]*[/B][/COLOR]Para usufruir deste addon é necessário uma combinação username/password</description>
