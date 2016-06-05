@@ -91,7 +91,7 @@
 <addon id="plugin.video.PsychoTV"
        name="[COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR]"
        version="3.0.2"
-       provider-name="Coelhon & AMObox">
+       provider-name="Coelhon e AMObox">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
