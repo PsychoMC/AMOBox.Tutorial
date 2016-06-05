@@ -91,7 +91,7 @@
 <addon id="plugin.video.PsychoTV"
        name="[COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR]"
        version="3.0.0"
-       provider-name="Coelhon">
+       provider-name="Coelhon & AMObox">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -116,7 +116,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">[COLOR aqua][B]P[/COLOR][COLOR white]sychoTV[/B][/COLOR] permite o acesso aos canais, filmes e sÃ©ries aos membros da [COLOR red]P[/COLOR][COLOR white]sycho[/COLOR]</summary>
     <description lang="en">Este Addon foi criado e desenvolvido pela Team[COLOR aqua][B] P[/COLOR][COLOR white][B]sycho Media Center[/B][/COLOR] o mesmo nao se responsabiliza pelo que o uso do mesmo venha a causar.
-	Tudo o que aqui se encontra estÃ¡ ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/RevolutionMC.Pt/ [/COLOR][/B]
+	Tudo o que aqui se encontra estÃ¡ ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://bit.ly/PsychoFacebook[/COLOR][/B]
 
 
 	[COLOR yellow][B]*[/B][/COLOR]Para usufruir deste addon Ã© necessÃ¡rio uma combinaÃ§Ã£o username/password</description>
@@ -181,9 +181,9 @@
 	<import addon="psycho.mediacenter" />
   </requires>
 	<extension point="xbmc.addon.repository" name="Demonstration Add-on Repository">
-		<info compressed="false">http://raw.github.com/PsychoMC/PsychoMC/master/addons.xml</info>
-		<checksum>http://raw.github.com/PsychoMC/PsychoMC/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.github.com/PsychoMC/PsychoMC/master/repo/</datadir>
+		<info compressed="false">https://raw.githubusercontent.com/PsychoMC/PsychoMC/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/PsychoMC/PsychoMC/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/PsychoMC/PsychoMC/master//repo/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Repositorio da [COLOR aqua]P[/COLOR][COLOR white]sycho[/COLOR]</summary>
