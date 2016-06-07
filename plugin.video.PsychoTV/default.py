@@ -448,9 +448,9 @@ def base10toN(num,n):
 
 def resolve(url):
     try:
-        control.log('[openload] - 1 %s' % url)
+        #control.log('[openload] - 1 %s' % url)
         if check(url) == False: return
-        control.log('[openload] - 2 %s' % url)
+        #control.log('[openload] - 2 %s' % url)
         id = re.compile('//.+?/(?:embed|f)/([0-9a-zA-Z-_]+)').findall(url)[0]
         myurl = 'https://openload.co/embed/%s' % id
         result = client.request(myurl)
@@ -458,6 +458,8 @@ def resolve(url):
         # decodeOpenLoad made by mortael - for me You are master:)
         def decodeOpenLoad(html):
             aastring = re.search(r"<video(?:.|\s)*?<script\s[^>]*?>((?:.|\s)*?)</script", html, re.DOTALL | re.IGNORECASE).group(1)
+            bbstring =  re.compile(r"<script\s[^>]*?>ﾟ(.*?)</script", re.DOTALL | re.IGNORECASE).findall(html)
+            aastring = bbstring[1]
 
             aastring = aastring.replace("(ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((c^_^o)-(c^_^o))+ (-~0)+ (ﾟДﾟ) ['c']+ (-~-~1)+","")
             aastring = aastring.replace("((ﾟｰﾟ) + (ﾟｰﾟ) + (ﾟΘﾟ))", "9")
@@ -697,13 +699,13 @@ def SearchChannels():
     
     Searchkey = Searchkey.lower()
     List=[]
-    List.append(RevolutionTV)   
+    List.append(PsychoTV)   
     PassedUrls = 0
     FoundChannel = 1 
     ReadChannel = 0
     FoundMatch = 0
     progress = xbmcgui.DialogProgress()
-    progress.create('[COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR] Searching Please wait',' ')  
+    progress.create('[COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR] Procurando espere por favor',' ')  
 	
     while FoundChannel <> ReadChannel:
         BaseSearch = List[ReadChannel].strip()
@@ -2668,13 +2670,13 @@ elif mode==17:
     if url:
         playsetresolved(url,name,iconimage,setresolved)
     else:
-        xbmc.executebuiltin("XBMC.Notification([COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR] ,Failed to extract regex. - "+"this"+",4000,"+icon+")") 
+        xbmc.executebuiltin("XBMC.Notification([COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR] ,Falha a extrair o regex. - "+"this"+",4000,"+icon+")") 
 elif mode==18:
     addon_log("youtubedl")
     try:
         import youtubedl
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification([COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR],Please [COLOR yellow]install the Youtube Addon[/COLOR] module ,10000,"")") 
+        xbmc.executebuiltin("XBMC.Notification([COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR],Por favor [COLOR yellow]instala o addon do Youtube[/COLOR] ,10000,"")") 
     stream_url=youtubedl.single_YD(url)
     playsetresolved(stream_url,name,iconimage)
 elif mode==19:
