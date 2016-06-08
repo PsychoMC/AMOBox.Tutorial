@@ -89,14 +89,14 @@ def INDEX():
     
 
 def BUILDMENU():
-    link = OPEN_URL('http://amoboxwizard.pe.hu/file.php?user='+USER+'&pass='+PASS).replace('\n','').replace('\r','')
+    link = OPEN_URL('http://psycho.pe.hu/file.php?user='+USER+'&pass='+PASS).replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
         addDir(name,url,90,iconimage,fanart,description)
     setView('movies', 'MAIN')
 	
 def BUILDMENU2():
-    link = OPEN_URL('http://amoboxwizard.pe.hu/file2.php?user='+USER+'&pass='+PASS).replace('\n','').replace('\r','')
+    link = OPEN_URL('http://psycho.pe.hu/file2.php?user='+USER+'&pass='+PASS).replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
         addDir(name,url,90,iconimage,fanart,description)
@@ -121,7 +121,7 @@ def CBTOOLS(id):
 	setView('movies', 'MAIN')
 
 def APKDOWNMENU():
-    link = OPEN_URL('http://amoboxwizard.pe.hu/file3.php?user='+USER+'&pass='+PASS).replace('\n','').replace('\r','')
+    link = OPEN_URL('http://psycho.pe.hu/file3.php?user='+USER+'&pass='+PASS).replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
         addDir(name,url,41,iconimage,fanart,description)

