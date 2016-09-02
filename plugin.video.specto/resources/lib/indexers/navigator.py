@@ -47,9 +47,16 @@ class navigator:
         movie_library = os.path.join(control.transPath(control.setting('movie_library')),'')
         tv_library = os.path.join(control.transPath(control.setting('tv_library')),'')
         tv_downloads = os.path.join(control.transPath(control.setting('tv_downloads')),'')
-        #movie_downloads = os.path.join(control.transPath(control.setting('movie_downloads')),'')
-        if not os.path.exists(movie_library): os.makedirs(movie_library)
-        if not os.path.exists(tv_library): os.makedirs(tv_library)
+        movie_downloads = os.path.join(control.transPath(control.setting('movie_downloads')),'')
+
+        try:
+            if not os.path.exists(movie_library): os.makedirs(movie_library)
+        except:
+            pass
+        try:
+            if not os.path.exists(tv_library): os.makedirs(tv_library)
+        except:
+            pass
         #if not os.path.exists(tv_downloads) and tv_downloads!='' : os.makedirs(tv_downloads)
         #if not os.path.exists(movie_downloads) and movie_downloads != '': os.makedirs(movie_downloads)
 
@@ -119,7 +126,7 @@ class navigator:
     def tvshows(self):
         self.addDirectoryItem(30051, 'tvGenres', 'tvGenres.jpg', 'DefaultTVShows.png')
         self.addDirectoryItem(30052, 'tvYears', 'tvshows.jpg', 'DefaultTVShows.png')
-        #self.addDirectoryItem(30053, 'tvNetworks', 'tvshows.jpg', 'DefaultTVShows.png')
+        self.addDirectoryItem(30053, 'tvNetworks', 'tvshows.jpg', 'DefaultTVShows.png')
         self.addDirectoryItem(30054, 'tvshows&url=trending', 'tvshowsTrending.jpg', 'DefaultRecentlyAddedEpisodes.png')
         self.addDirectoryItem(30055, 'tvshows&url=popular', 'tvshowsPopular.jpg', 'DefaultTVShows.png')
         #self.addDirectoryItem(30056, 'tvshows&url=airing', 'tvshows.jpg', 'DefaultTVShows.png')

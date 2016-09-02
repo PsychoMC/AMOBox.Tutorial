@@ -22,7 +22,6 @@
 import re,urllib,urlparse,base64
 
 from resources.lib.libraries import cleantitle
-from resources.lib.libraries import client2
 from resources.lib.libraries import client
 from resources.lib.libraries import control
 
@@ -36,7 +35,7 @@ class source:
 
     def request(self, url, check):
         try:
-            result = client2.http_get(url)
+            result = client.request(url)
             if check in str(result): return result.decode('iso-8859-1').encode('utf-8')
         except:
             return
@@ -97,11 +96,15 @@ class source:
 
             url = urlparse.urljoin(self.base_link, url)
 
-            result = self.request(url, 'Links - Quality')
+            result = client.request(url)
+            #print result
+
             result = result.replace('\n','')
+            print result
 
             quality = re.compile('>Links - Quality(.+?)<').findall(result)[0]
             quality = quality.strip()
+            print("Q",quality)
 
             if quality == 'CAM' or quality == 'TS': quality = 'CAM'
             elif quality == 'SCREENER': quality = 'SCR'
@@ -113,23 +116,28 @@ class source:
             for i in links:
                 try:
                     url = client.parseDOM(i, 'a', ret='href')[0]
-
                     try: url = urlparse.parse_qs(urlparse.urlparse(url).query)['u'][0]
                     except: pass
                     try: url = urlparse.parse_qs(urlparse.urlparse(url).query)['q'][0]
                     except: pass
-                    url = urlparse.parse_qs(urlparse.urlparse(url).query)['url'][0]
-
+                    url = urlparse.urlparse(url).query
                     url = base64.b64decode(url)
+                    url = re.findall('((?:http|https)://.+?/.+?)(?:&|$)', url)[0]
                     url = client.replaceHTMLCodes(url)
                     url = url.encode('utf-8')
+                    print("URL1",url)
 
                     host = re.findall('([\w]+[.][\w]+)$', urlparse.urlparse(url.strip().lower()).netloc)[0]
                     #if not host in hostDict: raise Exception()
+                    print(host.split('.')[0],hostDict)
+                    if not host.split('.')[0] in hostDict:
+                        if not host.split('.')[0] in hosthdDict: raise Exception()
                     host = client.replaceHTMLCodes(host)
                     host = host.encode('utf-8')
+                    print("URL4", host)
 
                     sources.append({'source': host.split('.')[0], 'quality': 'SD', 'provider': 'Movie25', 'url': url})
+
                 except:
                     pass
 

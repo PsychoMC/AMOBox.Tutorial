@@ -24,6 +24,9 @@ import sys,pkgutil,re,json,urllib,urlparse,datetime,time
 try: import xbmc
 except: pass
 
+try: import urlresolver
+except: pass
+
 try:
     from sqlite3 import dbapi2 as database
 except:
@@ -36,6 +39,9 @@ from resources.lib.libraries import client
 from resources.lib.libraries import workers
 from resources.lib.resolvers import realdebrid
 from resources.lib.resolvers import premiumize
+
+
+
 from resources.lib import resolvers
 
 
@@ -45,6 +51,7 @@ class sources:
 
 
     def play(self, name, title, year, imdb, tmdb, tvdb, tvrage, season, episode, tvshowtitle, alter, date, meta, url):
+        control.log('############# PLAY # %s' % url)
         try:
             if not control.infoLabel('Container.FolderPath').startswith('plugin://'):
                 control.playlist.clear()
@@ -166,7 +173,7 @@ class sources:
                     control.addItem(handle=int(sys.argv[1]), url='%s?%s' % (sysaddon, query), listitem=item, isFolder=False)
                 except:
                     pass
-
+            control.content(int(sys.argv[1]), 'files')
             control.directory(int(sys.argv[1]), cacheToDisc=True)
             try: self.progressDialog.close()
             except: pass
@@ -330,6 +337,8 @@ class sources:
 
         for i in range(0, timeout * 2):
             try:
+                #control.log("SOURCE S2 %s" % len(self.sources))
+
                 if xbmc.abortRequested == True: return sys.exit()
 
                 try: info = [sourceLabel[int(re.sub('[^0-9]', '', str(x.getName()))) - 1] for x in threads if x.is_alive() == True]
@@ -346,8 +355,8 @@ class sources:
                 time.sleep(0.5)
             except:
                 pass
-
-        self.progressDialog.close()
+        try: self.progressDialog.close()
+        except: pass
 
         return self.sources
 
@@ -391,6 +400,7 @@ class sources:
         except: timeout = 40
 
         [i.start() for i in threads]
+
 
         for i in range(0, timeout * 2):
             try:
@@ -558,6 +568,9 @@ class sources:
             dbcur = dbcon.cursor()
             dbcur.execute("DROP TABLE IF EXISTS rel_src")
             dbcur.execute("VACUUM")
+            dbcur.execute("DROP TABLE IF EXISTS rel_url")
+            dbcur.execute("VACUUM")
+
             dbcon.commit()
 
             control.infoDialog(control.lang(30511).encode('utf-8'))
@@ -864,8 +877,20 @@ class sources:
         try: self.hostlqDict = [i.lower() for i in reduce(lambda x, y: x+y, self.hostlqDict)]
         except: pass
 
+        try:
+            self.hostDict = urlresolver.relevant_resolvers(order_matters=True)
+            self.hostDict = [i.domains for i in self.hostDict if not '*' in i.domains]
+            self.hostDict = [i.lower() for i in reduce(lambda x, y: x+y, self.hostDict)]
+            self.hostDict = [x for y,x in enumerate(self.hostDict) if x not in self.hostDict[:y]]
+        except:
+            self.hostDict = []
+
+        #for i in self.hostDict:
+        #    control.log('##### SOURCES DICTY: %s' % i )
+
         self.hostsdfullDict = self.hostprDict + self.hosthqDict + self.hostmqDict + self.hostlqDict
+        #for i in self.hostsdfullDict:
+        #    control.log('##### SOURCES DICTY2: %s' % i )
+        #self.hostsdfullDict = self.hostDict
 
         self.hosthdfullDict = self.hostprDict + self.hosthdDict
-
-

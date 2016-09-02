@@ -1,8 +1,48 @@
-------------------------
-Specto v2016.06.01.2
-------------------------
-Small Fix - oneclickwatch, xmovies,
+2016.09.01.1
+    sfix - fmovie, sezonlukdizi
 
+2016.08.29.1
+    fix cache, and iwatchonline, muchmovies
+    todo: fmovies
+
+2016.08.23.4
+    fix - muchmovies, putlocker, movieshd
+    fix - iwatchonline
+
+
+2016.08.14.1:
+    download fix - if download folder is not set, display settings
+    sources fix - movie25, tunemovie, dayt.se
+    TVShows - add section networks (copy from exodus)
+
+2016.08.01.1:
+    imdb fix - movie and tvshows now works
+
+2016.07.30.2:
+    openload fix - Code take from plugin IPTVPlayer: "https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/
+
+
+2016.07.09.2:
+    Add - Genvideo
+    Add - separate addon called script.mrknow.urlresolver (from tknorris repo)
+    Fix - WSOnline - thx @bjgood
+    Fix - Muchmovies
+
+Specto v2016.06.26.2
+------------------------
+Fix - realdebrid
+Add - serieswatch
+Add - separate addon called SpectoThemepak
+
+Specto v2016.06.18.1
+------------------------
+Fix - putlocker, muchmovies, fmovies, daytse, xvideoss
+
+------------------------
+Specto v2016.06.06.1
+------------------------
+- oneclickwatch - disabled
+- openload - fixed (maybe?)
 ------------------------
 Specto v2016.05.10.6
 ------------------------
