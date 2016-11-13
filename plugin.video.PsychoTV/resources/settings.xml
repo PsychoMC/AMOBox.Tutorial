@@ -15,8 +15,8 @@
     <setting id="donotshowbychannels" label="Do Not show items under channel name" type="bool" default="false"/>
 	<setting id="searchotherplugins" label="Search Other plugins" type="bool" default="true"/>
 	
-	
-    
+	</category>
+ <category label="Segurança">    
     <setting id="parentalblockedpin" label="Parental Block Pin" type="text"  option="hidden"  default=""/>
     <setting id="parentalblocked" label="Is Parental Blocked Applied?" type="bool" default="true" enable="true"/>
     

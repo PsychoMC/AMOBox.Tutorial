@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.program.psychonews" version="3.0.0" name="[COLOR aqua]P[/COLOR][COLOR white]sycho News[/COLOR]" provider-name="bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
+<addon id="plugin.program.psychonews" version="3.0.1" name="[COLOR aqua]P[/COLOR][COLOR white]sycho News[/COLOR]" provider-name="bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
   <requires>
   	<import addon="xbmc.python" version="2.1.0"/>
   	<import addon="script.module.addon.common" optional="true" />
@@ -90,19 +90,19 @@
 
 <addon id="plugin.video.PsychoTV"
        name="[COLOR aqua]P[/COLOR][COLOR white]sychoTV[/COLOR]"
-       version="4.0.0"
-       provider-name="AMObox e Coelhon">
+       version="5.0.0"
+       provider-name="AMObox">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
+   <import addon="script.module.livestreamer" optional="true"/>
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
     <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="plugin.video.youtube" optional="true"/>
     <import addon="script.module.urlresolver" optional="true"/>
     <import addon="script.module.simplejson" />
     <import addon="script.common.plugin.cache" version="2.5.2"/>

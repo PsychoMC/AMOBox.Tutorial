@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.program.psychonews" version="3.0.0" name="[COLOR aqua]P[/COLOR][COLOR white]sycho News[/COLOR]" provider-name="bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
+<addon id="plugin.program.psychonews" version="3.0.1" name="[COLOR aqua]P[/COLOR][COLOR white]sycho News[/COLOR]" provider-name="bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
   <requires>
   	<import addon="xbmc.python" version="2.1.0"/>
   	<import addon="script.module.addon.common" optional="true" />
